@@ -3,7 +3,7 @@
   /*? CUSTOM PROPERTIES
   /*! ++++++++++++++++++++++++++++ */
 
-  /*? [x]: 
+  /*? ITEM: 
   /*! logo color  */
   --brand-logo-color: #4d5ae5;
 
@@ -16,18 +16,28 @@
   --headings-color: #2e2f42;
   --links-color: #2e2f42;
   --links-color-hover: #404bbf;
+  --team-soc-link-color: #ffffff;
+  --customers-link-color: #8E8F99;
+  --customers-link-color-hover: #404bbf;
 
   /*  todo:
   /** backgroud colors  */
   --hero-bg-color: #2e2f42;
   --footer-bg-color: #2e2f42;
+  --features-item-img-bg-color: #f4f4fd;
   --team-bg-color: #f4f4fd;
   --team-item-bg-color: #ffffff;
+  --team-soc-link-bg-color: #4d5ae5;
+  --team-soc-link-bg-color-hover: #31d0aa;
   --portfolio-project-item-bg-color: #ffffff;
 
   /*  todo:
   /** button colors : text, bg & borders */
+  --header-border-color: #e7e9fc;
   --main-btn-font-color: #ffffff;
+  --about-item-border-color: #E7E9FC;
+  --customers-item-border-color: #8E8F99;
+  --customers-link-border-color-hover: #404bbf;
   --studio-btn-bg-color: #4d5ae5;
   --studio-btn-bg-color-hover: #404bbf;
   --portfolio-btn-font-color: #4d5ae5;
@@ -153,12 +163,12 @@ img {
   line-height: 1.5;
 }
 
-/*! +++++++++++++++++++++++++++++++
-/*? HEADER
+/*! +++++++++++++++++++++++++++++
+    HEADER: STUDIO Page
 /*! ++++++++++++++++++++++++++++ */
 
 .header {
-  border-bottom: 1px solid #e7e9fc;
+  border-bottom: 1px solid var(--header-border-color);
 }
 
 .header-container {
@@ -167,7 +177,7 @@ img {
   justify-content: space-between;
 }
 
-/*? todo: Navigation */
+/* LIST: Navigation */
 
 .nav {
   align-items: center;
@@ -214,7 +224,7 @@ img {
   gap: 40px;
 }
 
-/*? todo: Address */
+/* LIST: Address */
 
 .address {
   margin-left: auto;
@@ -232,17 +242,18 @@ img {
   padding: 24px 0;
 }
 
-/*! +++++++++++++++++++++++++++++++
-/** STUDIO PAGE
-/*! -------------------------------
-/*? MAIN
+/*! +++++++++++++++++++++++++++++
+    MAIN: STUDIO Page
 /*! ++++++++++++++++++++++++++++ */
 
-/*? TODO:
-/********** Hero section *********/
+/* SECTION: Hero */
 
 .hero {
   background-color: var(--hero-bg-color);
+  background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/studio/hero-bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   padding: 188px 0;
 }
 
@@ -273,8 +284,7 @@ img {
   background-color: var(--studio-btn-bg-color-hover);
 }
 
-/*? TODO:
-/****** Features section *******/
+/* SECTION: Features */
 
 .features-list {
   display: flex;
@@ -285,12 +295,23 @@ img {
   width: calc((100% - 3 * 24px) / 4);
 }
 
+.features-item-img {
+  background-color: var(--features-item-img-bg-color);
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.features-item-icon {
+  height: auto;
+  padding: 24px 100px;
+  width: auto;
+}
+
 .features-item-title {
   margin-bottom: 8px;
 }
 
-/*? TODO:
-/***** About section *****/
+/* SECTION: About */
 
 .about {
   padding-top: 0;
@@ -303,6 +324,10 @@ img {
 
 /* todo: refact
 ! [.team-title has the same properies] */
+
+.about-item {
+  border: 1px solid var(--about-item-border-color);
+}
 
 .about-title,
 .team-title {
@@ -320,8 +345,7 @@ img {
   gap: 24px;
 }
 
-/*? TODO:
-/***** Team section *****/
+/* SECTION Team */
 
 .team {
   background-color: var(--team-bg-color);
@@ -342,6 +366,9 @@ img {
 .team-item {
   background-color: var(--team-item-bg-color);
   border-radius: 0 0 4px 4px;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
   text-align: center;
   width: calc((100% - 3 * 24px) / 4);
 }
@@ -354,8 +381,96 @@ img {
   margin-bottom: 8px;
 }
 
-/*! +++++++++++++++++++++++++++++++
-/*? FOOTER
+.team-item-text {
+  margin-bottom: 8px;
+}
+
+.team-soc-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.team-soc-item {
+  height: 40px;
+  width: 40px;
+}
+
+.team-soc-link {
+  align-items: center;
+  background-color: var(--team-soc-link-bg-color);
+  border-radius: 50%;
+  color: var(--team-soc-link-color);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  width: 100%;
+}
+
+.team-soc-link:hover {
+  background-color: var(--team-soc-link-bg-color-hover);
+}
+
+.team-soc-icon {
+  fill: currentColor;
+}
+
+/* SECTION Customers */
+
+.customers-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.customers-title {
+  color: var(--header-text-color);
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  line-height: 1.11;
+  margin-bottom: 72px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.customers-list {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  justify-content: center;
+}
+
+.customers-item {
+  width: calc(100% - 170px) / 6;
+}
+
+.customers-link {
+  align-items: center;
+  border: 1px solid var(--customers-item-border-color);
+  border-radius: 4px;
+  color: var(--customers-link-color);
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  padding: 16px 32px;
+  width: 100%;
+}
+
+.customers-link-icon {
+  fill: currentColor;
+}
+
+.customers-link:hover {
+  border-color: var(--customers-link-border-color-hover);
+}
+
+.customers-link:hover .customers-link-icon {
+  border-color: var(--customers-link-border-color-hover);
+  fill: var(--customers-link-color-hover);
+}
+
+/*! +++++++++++++++++++++++++++++
+    FOOTER: STUDIO Page
 /*! ++++++++++++++++++++++++++++ */
 
 .footer {
@@ -381,14 +496,11 @@ img {
   max-width: 264px;
 }
 
-/*! +++++++++++++++++++++++++++++++
-/** PORTFOLIO PAGE
-/*! -------------------------------
-/*? MAIN
+/*! +++++++++++++++++++++++++++++
+    MAIN: PORTFOLIO Page
 /*! ++++++++++++++++++++++++++++ */
 
-/*? TODO:
-/******* Projects sections *******/
+/* SECTION Projects */
 
 .projects {
   padding-top: 96px;
@@ -398,7 +510,7 @@ img {
   flex-direction: column;
 }
 
-/*? todo: Buttons */
+/* LIST: Buttons */
 
 .projects-btn-list {
   display: flex;
@@ -422,7 +534,7 @@ img {
   color: var(--main-btn-font-color);
 }
 
-/*? todo: Cards */
+/* LIST: Cards */
 
 .projects-list {
   column-gap: 24px;
