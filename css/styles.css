@@ -422,7 +422,7 @@ img {
   background-color: var(--team-item-link-bg-color-hover);
 }
 
-.team-item:focus {
+.team-soc-link:focus {
   background-color: var(--team-item-link-bg-color-hover);
 }
 
@@ -589,7 +589,6 @@ img {
 }
 
 .projects-btn {
-  display: block;
   min-width: auto;
   padding: 12px 24px;
   color: var(--portfolio-btn-font-color);
@@ -618,16 +617,16 @@ img {
 
 .projects-list-item {
   width: calc((100% - 48px) / 3);
+}
+
+.projects-item-link {
+  display: block;
   color: var(--body-text-color);
   background-color: var(--portfolio-project-item-bg-color);
 }
 
-.project-item-link {
-  display: block;
-}
-
-.projects-list-item:hover,
-.projects-list-item:focus {
+.projects-item-link:hover,
+.projects-item-link:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
